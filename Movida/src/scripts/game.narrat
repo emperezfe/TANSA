@@ -1,0 +1,177 @@
+main:
+
+  set data.hellCounter 0 
+
+  "Nada, 45 minutos buscando  y no encuentro nada de nada, no hay ninguna oferta nueva."
+  "Ya he enviado mi curriculum a todas las que había visto, a ver si alguna me contestase al menos... "
+  "Mañana seguiré buscando, supongo."
+  //cachin notificacion
+  "Anda, un mensaje nuevo. A ver qué onda."
+  wait 700
+  set_screen game //0 slide-top 1000
+  play music web
+  wait 700
+  //esta fuente y color tendrían que ir distintas
+  "¡Hola! Te contacto de parte de TAN S.A., una empresa puntera del sector, fundada por apasionados amantes de la tecnología. TAN S.A. está empujando las barreras de innovación del desarrollo en colaboración con otras grandes empresas. <br/ > La compañía está experimentando una rápida expansión en los últimos meses y tu perfil nos ha llamado la atención. Actualmente tenemos una oportunidad en la que creemos que podrías ser una gran incorporación. Buscamos a una persona talentosa y con experiencia en el rol para unirse al equipo y aporte grandes ideas y resultados para llevar nuestros productos un paso más allá. Ofrecemos un horario flexible en modelo híbrido, múltiples beneficios y los salarios más competentes del sector. <br/ > Si te interesa, me gustaría poder compartir contigo detalles del rol y conocerte mejor. ¿Te gustaría que nos pongamos en contacto en los próximos días? <br/ > Menganita Mengánez <br/ > 7C Consulting"
+
+  "Vaya, parece que mi perfil les interesa bastante. Y a mí los salarios más competentes del sector me interesan, desde luego."
+  "El paro se me va a terminar y el alquiler y la comida de mis gatos no se pagan solos."
+  "Pero, ¿a cambio de trabajar en qué, exactamente?"
+  "No termino de entender muy bien a qué se dedican, ni por qué les habré llamado yo la atención… "
+  "¿Sabré realmente hacer el trabajo que me pidan?"
+  "Sería en modelo híbrido… Bueno, al menos puedo teletrabajar algunos días. Espero que la oficina no quede muy lejos de casa…"
+  "En fin. Yo qué sé. Tras seis meses buscando curro no estoy para poner pegas. "
+  
+//set_screen call 
+//
+//talk cat idle "miau supongo"
+//choice:
+//  talk cat idle "me querrás para toda la vida?"
+//  "Claro."
+//    talk cat idle "menos mal jo"
+//    set data.catLovesMe true
+//  "Mi peor debilidad es no saber encontrarla. Soy tan, tan perfeccionista que jamás hice ni una sola cosa mal. Y cuando algo no alcanza los estándares de perfección de la empresa, me quedo horas y horas y horas buscando la excelencia. Horas extras no remuneradas, por supuesto. Incluso busco la excelencia los sábados y los domingos. Gratis. "
+//    talk cat idle "estás chalado"
+//    set data.catLovesMe false
+//
+//if (== $catLovesMe true):
+//  "El gatito está muy contento porque lo quieres mogollón."
+//else:
+//  "Eres un chapas y el gato te odia."
+//
+  //transición con unos fades que dure unos segundos
+
+  set_screen interview1
+
+  play music call 
+
+  talk entrevistadora idle "¡Buenos días! ¿Se escucha bien?"
+  talk player idle "¡Buenos días! Sí, perfectamente."
+  talk entrevistadora idle "Genial. ¡Buenos días! Soy Menganita Mengánez. Me alegro mucho de poder conocerte."
+  choice:
+    talk entrevistadora idle "Muchas gracias por agendar tiempo en tu apretada agenda para conocer un poco más en profundidad a la gran familia que somos TAN SA."
+    "Apretada de qué, gilipollas, si estoy en paro."
+      jump badEnding 
+    "Es un placer conocerte, Menganita."
+      jump secondQuestion
+    "El placer de poder tener la oportunidad de descubrir más sobre la compañía puntera del sector es mío."
+      add data.hellCounter 1
+      jump secondQuestion
+
+secondQuestion:
+  talk entrevistadora idle "Qué bien, qué bien, siempre es un placer conocer a gente joven y motivada."
+  choice:
+    talk entrevistadora idle "Qué calor hace hoy, ¿no? Llevamos sin tener una ola de calor así desde hace siglos."
+    "Para que alguien me cuente su putísima vida habría quedado con mis colegas."
+      jump badEnding 
+    "Sí, está el tiempo muy raro últimamente en esta ciudad, la verdad."
+      jump thirdQuestion
+    "Totalmente cierto. Pero no me importa el calor: soy una persona tan flexible y adaptable que no me molesta ningún clima."
+      add data.hellCounter 1
+      jump thirdQuestion
+
+thirdQuestion:
+  talk entrevistadora idle "Basta de hablar del tiempo, ¡hablemos sobre ti! En tu perfil he podido ver que estás en búsqueda de nuevas oportunidades, y aquí tenemos grandes desafíos para ti, y muchas excelentes oportunidades para que asciendas en tu carrera y la eleves al próximo nivel. Quiero saber qué es lo que te motiva como profesional."
+  choice:
+    talk entrevistadora idle "¿Qué buscas en tu nuevo puesto de trabajo?"
+    "Que me dejéis en paz cobrando mi sueldecito y no me toquéis mucho la moral estaría de locos."
+      jump badEnding 
+    "Busco un entorno tranquilo en el que seguir mejorando como profesional."
+      jump fourthQuestion
+    "Desafiarme y encontrar nuevos retos en los que demostrar todo mi aprendizaje y habilidades es la gasolina que necesito para mantener el fuego de mi ambición."
+      add data.hellCounter 1
+      jump fourthQuestion
+
+fourthQuestion:
+  set_screen interview2
+  talk entrevistadora idle "¡Eso es genial! Encaja perfectamente con nuestra filosofía. Buscamos a una persona que encaje en nuestro equipo como un guante y que pueda trabajar codo a codo con el resto de activos de la empresa a la perfección."
+  choice:
+    talk entrevistadora idle "¿Cuáles consideras que son tus fortalezas y tus debilidades?"
+    "Llevo un rato en esta entrevista y todavía no he llorado. Yo creo que es una fortaleza estupenda."
+      jump badEnding 
+    "Fortalezas, que trabajo bien en equipo, y debilidades… pues mis conocimientos técnicos en algunos aspectos a veces flaquean, pero estoy mejorándolos."
+      jump fifthQuestion
+    "Mi peor debilidad es no saber encontrarla. Soy tan, tan perfeccionista que jamás hice ni una sola cosa mal. Y cuando algo no alcanza los estándares de perfección de la empresa, me quedo horas y horas y horas buscando la excelencia. Horas extras no remuneradas, por supuesto. Incluso busco la excelencia los sábados y los domingos. Gratis. "
+      add data.hellCounter 1  
+      jump fifthQuestion
+
+fifthQuestion:
+  talk entrevistadora idle "¡Excelente respuesta! En TAN SA somos grandes avocados de la excelencia, y del trabajo en equipo."
+  talk entrevistadora idle "Sin embargo, sabemos que convivir con mucha gente y tener ideas que puedan chocar a veces puede resultar en conflicto."
+  choice:
+    talk entrevistadora idle "Cuéntame, ¿cuáles consideras que son tus manías?"
+    "¿Mis manías? Tengo una manía mala malísima con tener que pagar mis facturas."
+      jump badEnding 
+    "Ah, pues no había pensado mucho en ello… mmmm... no me gustan los olores fuertes."
+      jump sixthQuestion
+    "Definitivamente, no ver a mis compañeros sonreír mientras trabajo me saca una de mis peores manías: animarles el día encargándome yo personalmente de todas sus tareas, para sacarles esa sonrisa permanente que todos deberíamos tener mientras aportamos grandes ideas a la empresa."
+      add data.hellCounter 1 
+      jump sixthQuestion
+
+sixthQuestion:
+  talk entrevistadora idle "Muchísimas gracias por todas tus respuestas a las preguntas de hoy y por tu tiempo. He podido hacerme una mejor idea de tus motivaciones y ambiciones, y de la ruta que quieres tomar con tu carrera profesional. "
+  choice:
+    talk entrevistadora idle "Tengo para ti una última pregunta. ¿Por qué eres el candidato ideal?"
+    "Subirte a la mesa y cagarte encima"
+      jump badEnding 
+    "Considero que tengo mucho que aportar a TAN SA, con mi experiencia y mi motivación."
+      jump notHired
+    "No hay persona como yo en este sector. Puedo ser un gran activo para la empresa ya que cuento con una combinación única de excelentes habilidades técnicas y capacidad de construir relaciones a largo plazo con los clientes. "
+      add data.hellCounter 1
+      if (== $hellCounter 6):
+        jump startSellSoul
+      else: 
+        jump notHired
+
+startSellSoul: 
+  set_screen interview3
+  talk entrevistadora idle "Eres definitivamente el candidato perfecto. He quedado impresionada con todas tus respuestas."
+  wait 800
+  choice:
+    talk entrevistadora idle "¿Te interesa seguir adelante con el proceso?"
+    "Sí."
+      jump confirmSellSoul
+    "Sí."
+      jump confirmSellSoul
+    "Sí."
+      jump confirmSellSoul
+
+confirmSellSoul: 
+  talk entrevistadora idle "¿Te interesa de verdad seguir adelante con el proceso?"
+  wait 1300
+  choice:
+    talk entrevistadora idle "¿Quieres ser empleado de TAN SA?"
+    "SÍ."
+      jump finalSellSoul
+    "SÍ."
+      jump finalSellSoul
+    "LO NECESITO. SÍ."
+      jump finalSellSoul
+
+finalSellSoul: 
+  talk entrevistadora idle "Plot twist: soy Satán"
+  wait 800
+  set_screen interview4
+  play sound breath
+  wait 500
+
+  //cambiar background 
+  choice:
+    talk entrevistadora idle "Bienvenida al infierno fea"
+    "Vender tu alma."
+      jump goodEnding
+    "Vender tu alma."
+      jump goodEnding
+    "Vender tu alma."
+      jump goodEnding
+
+notHired:
+  "No te han contratado."
+
+badEnding: 
+  "Se terminó la entrevista."
+
+goodEnding: 
+  "Te han contratado. Pero a qué precio."
+
+

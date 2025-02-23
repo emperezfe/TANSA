@@ -1,0 +1,13 @@
+screens:
+  default:
+    background: img/backgrounds/default.png
+  game:
+    background: img/backgrounds/linkedin.png
+  interview1:
+    background: img/backgrounds/interview1.png
+  interview2:
+    background: img/backgrounds/interview2.png
+  interview3:
+    background: img/backgrounds/interview3.png
+  interview4:
+    background: img/backgrounds/interview4.png
