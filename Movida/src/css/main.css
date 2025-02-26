@@ -7,10 +7,22 @@
   --primary: hsl(255, 30%, 55%);
   --focus: hsl(210, 90%, 50%);
   --secondary: #42b983;
-  --font-size: 200%;
-  --font-family: Montserrat;
+  --font-family: "OpenDyslexic";
+  --font-size: 2.5em;
+
   /* You can easily override a CSS style by making it more specific than the original one.
   Any css added here will applied to elements inside of #narrat and be likely more specific than their original version */
 }
 
+.interact-button {
+  color: #c74949;
+}
+
+.dialog-choice {
+  color: #c74949;
+}
+
+.dialog-container {
+  --bg-color: #414141;
+}
 /* Add any other CSS you want here */

@@ -8,6 +8,12 @@ files:
   breath:
     loop: true
     src: audio/BreathFast.wav
+  fire:
+    loop: true
+    src: audio/FUEGO.wav
+  emailSound:
+    loop: false
+    src: audio/Email_Sound.wav
 options:
   volume: 0.5
   musicFadeInTime: 0.5

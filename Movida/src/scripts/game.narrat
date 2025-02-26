@@ -5,11 +5,12 @@ main:
   "Nada, 45 minutos buscando  y no encuentro nada de nada, no hay ninguna oferta nueva."
   "Ya he enviado mi curriculum a todas las que había visto, a ver si alguna me contestase al menos... "
   "Mañana seguiré buscando, supongo."
-  //cachin notificacion
+  play sound emailSound
+  wait 1000
   "Anda, un mensaje nuevo. A ver qué onda."
   wait 700
-  set_screen game //0 slide-top 1000
-  play music web
+  set_screen game 
+  play music web 
   wait 700
   //esta fuente y color tendrían que ir distintas
   "¡Hola! Te contacto de parte de TAN S.A., una empresa puntera del sector, fundada por apasionados amantes de la tecnología. TAN S.A. está empujando las barreras de innovación del desarrollo en colaboración con otras grandes empresas. <br/ > La compañía está experimentando una rápida expansión en los últimos meses y tu perfil nos ha llamado la atención. Actualmente tenemos una oportunidad en la que creemos que podrías ser una gran incorporación. Buscamos a una persona talentosa y con experiencia en el rol para unirse al equipo y aporte grandes ideas y resultados para llevar nuestros productos un paso más allá. Ofrecemos un horario flexible en modelo híbrido, múltiples beneficios y los salarios más competentes del sector. <br/ > Si te interesa, me gustaría poder compartir contigo detalles del rol y conocerte mejor. ¿Te gustaría que nos pongamos en contacto en los próximos días? <br/ > Menganita Mengánez <br/ > 7C Consulting"
@@ -21,27 +22,10 @@ main:
   "¿Sabré realmente hacer el trabajo que me pidan?"
   "Sería en modelo híbrido… Bueno, al menos puedo teletrabajar algunos días. Espero que la oficina no quede muy lejos de casa…"
   "En fin. Yo qué sé. Tras seis meses buscando curro no estoy para poner pegas. "
-  
-//set_screen call 
-//
-//talk cat idle "miau supongo"
-//choice:
-//  talk cat idle "me querrás para toda la vida?"
-//  "Claro."
-//    talk cat idle "menos mal jo"
-//    set data.catLovesMe true
-//  "Mi peor debilidad es no saber encontrarla. Soy tan, tan perfeccionista que jamás hice ni una sola cosa mal. Y cuando algo no alcanza los estándares de perfección de la empresa, me quedo horas y horas y horas buscando la excelencia. Horas extras no remuneradas, por supuesto. Incluso busco la excelencia los sábados y los domingos. Gratis. "
-//    talk cat idle "estás chalado"
-//    set data.catLovesMe false
-//
-//if (== $catLovesMe true):
-//  "El gatito está muy contento porque lo quieres mogollón."
-//else:
-//  "Eres un chapas y el gato te odia."
-//
-  //transición con unos fades que dure unos segundos
 
-  set_screen interview1
+  pause music
+
+  set_screen interview1 0 fade 1500
 
   play music call 
 
@@ -152,7 +136,7 @@ finalSellSoul:
   talk entrevistadora idle "Plot twist: soy Satán"
   wait 800
   set_screen interview4
-  play sound breath
+  play sound fire
   wait 500
 
   //cambiar background 
@@ -169,6 +153,7 @@ notHired:
   "No te han contratado."
 
 badEnding: 
+  set_screen endInterview
   "Se terminó la entrevista."
 
 goodEnding: 

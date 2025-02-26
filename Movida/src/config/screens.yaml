@@ -4,10 +4,12 @@ screens:
   game:
     background: img/backgrounds/linkedin.png
   interview1:
-    background: img/backgrounds/interview1.png
+    background: img/backgrounds/pavanormal.png
   interview2:
-    background: img/backgrounds/interview2.png
+    background: img/backgrounds/pavaojeras.png
   interview3:
-    background: img/backgrounds/interview3.png
+    background: img/backgrounds/pavasangre.png
   interview4:
-    background: img/backgrounds/interview4.png
+    background: img/backgrounds/pavainfierno.png
+  endInterview:
+    background: img/backgrounds/pavamalacara.png
